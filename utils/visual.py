@@ -71,7 +71,8 @@ def ppk_plot(data: (pd.Series, np.array),
 
     left, right = ax.get_xlim()
     bottom, top = ax.get_ylim()
-    cpk = calc_ppk(data, upper_control_limit=upper_control_limit, lower_control_limit=lower_control_limit)
+    #s,NGD,VGD
+    cpk = calc_ppk(data, VGD=upper_control_limit, NGD=lower_control_limit)
 
     lower_sigma_level = (mean - lower_control_limit) / std
     if lower_sigma_level < 6.0:
